@@ -1,5 +1,5 @@
 'use strict';
-window.onload = function() {
+document.addEventListener('DOMContentLoaded', function() {
   var money = prompt("Ваш бюджет на месяц? (руб.)", '30000');
   var time = prompt("Введите дату в формате YYYY-MM-DD", '2019-03-01');
 
@@ -44,4 +44,4 @@ window.onload = function() {
   let freeMoney = money - sum;
 
   alert ('Свободных денег на 1 день: ' + freeMoney / 30 + ' рублей');
-}
+}, false);

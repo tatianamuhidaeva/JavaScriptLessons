@@ -1,46 +1,24 @@
 'use strict';
 
-  var money = prompt("Ваш бюджет на месяц? (руб.)", '30000');
-  var time = prompt("Введите дату в формате YYYY-MM-DD", '2019-03-01');
+  let money = prompt("Ваш бюджет на месяц? (руб.)", '30000');
+  let time = prompt("Введите дату в формате YYYY-MM-DD", '2019-03-01');
 
-  var expenses = [
-    {
-      name: '',
-      sum: 0
-    },
-    {
-      name: '',
-      sum: 0
-    }
-  ]
-
-  expenses[0].name = prompt('Введите обязательную статью расходов в этом месяце', 'Питание');
-  expenses[0].sum = prompt('Во сколько обойдется? (руб.)', '3000');
-  expenses[1].name = prompt('Введите обязательную статью расходов в этом месяце', 'Одежда');
-  expenses[1].sum = prompt('Во сколько обойдется? (руб.)', '2000');
-
-  var appData = {
-    money: money,
-    timeData: time,
-    expenses: expenses,
+ 
+  let appData = {
+    budget: money,
+    expenses: {},
+    optionalExpenses: {},
     income: null,
+    timeData: time,
     saving: false
   };
 
+  let a1 = prompt('Введите обязательную статью расходов в этом месяце', 'food'),
+      a2 = prompt('Во сколько обойдется? (руб.)', '3000'),
+      a3 = prompt('Введите обязательную статью расходов в этом месяце', 'clouse'),
+      a4 = prompt('Во сколько обойдется? (руб.)', '2000');
 
-  console.log(money);
-  console.log(time);
-  console.log(appData.expenses[0]);
-  console.log(appData.expenses[1]);
-  console.log(appData);
+  appData.expenses.a1 = a2;
+  appData.expenses.a3 = a4;
 
-  console.log(appData.money);
-
-  let sum = parseInt(appData.expenses[0].sum) + parseInt(appData.expenses[1].sum);
-
-    console.log(sum);
-
-
-  let freeMoney = money - sum;
-
-  alert ('Свободных денег на 1 день: ' + freeMoney / 30 + ' рублей');
+  alert (appData.budget / 30);

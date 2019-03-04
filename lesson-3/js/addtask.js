@@ -1,28 +1,30 @@
 'use strict';
 
 // Задание 1
-let str = 'урок-3-был слишком легким';
+let str1 = 'урок-3-был слишком легким';
 
-str = str[0].toUpperCase() + str.slice(1);
+str1 = str1[0].toUpperCase() + str1.slice(1);
 
 
 // Задание 2
-let pos = -1;
-while ((pos = str.indexOf('-', pos + 1)) != -1) {
-  str = str.substring(0, pos) + " " + str.slice(pos + 1);
+let str2 = str1;
+let pos2 = -1;
+while ((pos2 = str2.indexOf('-', pos2 + 1)) != -1) {
+  str2 = str2.substring(0, pos2) + " " + str2.slice(pos2 + 1);
 }
 
-console.log(str);
+console.log(str2);
 
 // Задание 3
-let substr = 'легким';
-pos = str.indexOf(substr);
-if (~pos) {
-  substr = str.slice(0, -2) + "o";
-  str = str.substring(0, pos) + substr + str.slice(pos + substr.length + 1);
-  console.log(str);
+let str3 = str2;
+let substr3 = 'легким';
+let pos3 = str3.indexOf(substr3);
+if (~pos3) {
+  substr3 = substr3.slice(0, -2) + "oо";
+  str3 = str3.slice(0, pos3) + substr3 + str3.slice(pos3 + substr3.length + 1);
+  console.log(str3);
 } else {
-  console.log("Слово " + substr + " не найдено!");
+  console.log("Слово " + substr3 + " не найдено!");
 }
 
 /* Задание 4 
@@ -51,5 +53,5 @@ function toTrimmerStr(str) {
     alert ("Аргументом функции toTrimmerStr() не является строка!");
   }
 }
-str = prompt("Введите произвольную строку");
-toTrimmerStr(str);
+let str5 = prompt("Введите произвольную строку");
+toTrimmerStr(str5);

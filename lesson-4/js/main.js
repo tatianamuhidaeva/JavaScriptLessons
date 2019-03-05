@@ -71,7 +71,7 @@ let appData = {
     
     while (!bool) {
       let items = prompt ("Что принесет дополнительный доход? (Перечслите через запятую)", "");
-      if ((typeof (items) === 'string') && (typeof (items) != null) && (items != '')) {
+      if ((typeof (items) === 'string') && (items != null) && (items != '')) {
         mass = items.split(", ");
         mass.forEach(element => {
           if ((typeof (element) === 'string') && (element != '')) {

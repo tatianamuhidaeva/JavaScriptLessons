@@ -53,11 +53,7 @@ function nowDay(){;
   document.body.appendChild(div);  
 }
 
-//Напишите функцию, которая выводит на страницу разницу между двумя датами в количестве дней
-function getDiffDates(start, finish, res) {
-  console.log(start);
-   res = (finish.valueOf() - start.valueOf())/(1000*3600*24);
-} 
+
 
 let output = document.createElement('div');
 document.body.appendChild(output);
@@ -68,10 +64,14 @@ output.appendChild(text);
 
 nowDay();
 
-let start = document.getElementById('start'),
-    finish = document.getElementById('finish'),
-    res = document.getElementById('res'),
-    btn = document.getElementsByTagName('button')[0];
+let btn = document.getElementsByTagName('button')[0];
 
-    btn.addEventListener('click', getDiffDates(start, finish, res));
+    btn.onclick = function() {
+      let start = document.getElementById('start').value,
+      finish = document.getElementById('finish').value;
+      
+      let ms = Date.parse(finish) - Date.parse(start);
+      document.getElementById('res').value = +ms/(1000*3600*24);
+      return false;
+    };
     

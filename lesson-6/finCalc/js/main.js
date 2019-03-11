@@ -65,7 +65,8 @@ startBtn.addEventListener('click', function(){
 });
 for (let i = 1; i < expItems.length; i +=2) {
   expItems[i].addEventListener('keydown', function(e){
-    if (e.keyCode < 48 || e.keyCode > 57) {
+    console.log(e.key + "  " +  e.keyCode);
+    if ((e.keyCode > 31 && e.keyCode < 37)  || (e.keyCode > 40 && e.keyCode < 48)  || e.keyCode > 57) {
       e.preventDefault();
     }
   });
@@ -102,8 +103,6 @@ expItemBtn.addEventListener('click', function(){
 for (let i = 0; i < optExpItems.length; i ++) {
 
   optExpItems[i].addEventListener('keydown', function(e){
-    console.log(e.key);
-    console.log(e.keyCode);
     if ((e.keyCode > 40 && e.key < "Ё")  || e.key > "ё") {
       e.preventDefault();
     }

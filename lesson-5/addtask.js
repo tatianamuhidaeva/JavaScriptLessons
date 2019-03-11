@@ -1,8 +1,10 @@
+'use strict';
+
 //Напишите функцию, которая будет добавлять 0 перед днями и месяцами, которые состоят из одной цифры
 function formateDate(date) {
   return formateNum(date.getHours()) + ":"
 + formateNum(date.getMinutes()) + ":" + formateNum(date.getMinutes()) + " " 
-+ formateNum(date.getDate()) + "." + formateNum(date.getMonth()) + "." + date.getFullYear();
++ formateNum(date.getDate()) + "." + formateNum(date.getMonth()+1) + "." + date.getFullYear();
 }
 
 //Выведите на страницу текущую дату и время в формате '09:59:59 30.05.2018'

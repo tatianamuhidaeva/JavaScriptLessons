@@ -1,22 +1,20 @@
-function sayName(name){
-  let message = "My name is" + name;
-  return message;
-}
 
-let arr = [3, 4,34,-4,0.4,3];
-let result = arr.reduce(function(sum,elem){
-  return sum+elem;
-})
+describe("TEST", function(){
 
-let assert = require('chai').assert;
+	it("Функция sum должна возвращать тип данных true", function(){
+		assert.equal(sum(2,30), true);
+	});
+	it("Переменная num должна быть равна 5.", function(){
+		assert.equal(num, 5);
+	});
 
-describe("sayName", function(){
-  it("Получаем файл с новым именем", function(){
-    assert.typeOf(sayName("Alex"), 'string');
-  });
+	it("Функция each должна возвращать тип данных array", function () {
+		assert.typeOf(each(mass, myFunc), 'array');
+	});
+	it("Функция each должна возвращать 8, 7, 6, 5, 4", function () {
+		assert.deepEqual(each(mass, myFunc), [ 8, 7, 6, 5, 4 ]);
+	});
+	it("Функция each должна возвращать массив длиной  5", function () {
+		assert.equal(each(mass, myFunc).length, 5);
+	});
 });
-describe("arr", function(){
-  it("Получаем сумму чмсел", function(){
-    assert.equal(result, 40.4);
-  })
-})

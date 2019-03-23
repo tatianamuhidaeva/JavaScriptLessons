@@ -50,12 +50,18 @@ $(document).ready(function () {
 
   console.log($('.form-inline'));
   console.log($('.form-inline').find('button'));
-  $('.form-inline').find('button').on('click', function () {
+  $('.form-inline').on('submit', function (e) {
+    var $form = $(this);
     $.ajax({
-      url: 'server.php',
-      type: 'post',
-      dataType: 'json',
-      data: $('form.form-inline').serialize()
+      type: $form.attr('method'),
+      url: $form.attr('action'),
+      data: $form.serialize()
+    }).done(function() {
+      console.log('success');
+    }).fail(function() {
+      console.log('fail');
     });
+    //отмена действия по умолчанию для кнопки submit
+    e.preventDefault(); 
   });
 });
